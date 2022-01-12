@@ -618,7 +618,7 @@ cfg_if! {
         impl Eq for utmpx {}
 
         impl ::fmt::Debug for utmpx {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("utmpx")
                     .field("ut_type", &self.ut_type)
                     .field("ut_pid", &self.ut_pid)
@@ -664,7 +664,7 @@ cfg_if! {
         impl Eq for __c_anonymous_ptrace_syscall_info_data {}
 
         impl ::fmt::Debug for __c_anonymous_ptrace_syscall_info_data {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 unsafe {
                 f.debug_struct("__c_anonymous_ptrace_syscall_info_data")
                     .field("entry", &self.entry)

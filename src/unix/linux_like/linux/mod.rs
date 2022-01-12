@@ -1253,7 +1253,7 @@ cfg_if! {
         }
         impl Eq for sockaddr_nl {}
         impl ::fmt::Debug for sockaddr_nl {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("sockaddr_nl")
                     .field("nl_family", &self.nl_family)
                     .field("nl_pid", &self.nl_pid)
@@ -1286,7 +1286,7 @@ cfg_if! {
         impl Eq for dirent {}
 
         impl ::fmt::Debug for dirent {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("dirent")
                     .field("d_ino", &self.d_ino)
                     .field("d_off", &self.d_off)
@@ -1324,7 +1324,7 @@ cfg_if! {
         impl Eq for dirent64 {}
 
         impl ::fmt::Debug for dirent64 {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("dirent64")
                     .field("d_ino", &self.d_ino)
                     .field("d_off", &self.d_off)
@@ -1354,7 +1354,7 @@ cfg_if! {
         impl Eq for pthread_cond_t {}
 
         impl ::fmt::Debug for pthread_cond_t {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("pthread_cond_t")
                 // FIXME: .field("size", &self.size)
                     .finish()
@@ -1376,7 +1376,7 @@ cfg_if! {
         impl Eq for pthread_mutex_t {}
 
         impl ::fmt::Debug for pthread_mutex_t {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("pthread_mutex_t")
                 // FIXME: .field("size", &self.size)
                     .finish()
@@ -1398,7 +1398,7 @@ cfg_if! {
         impl Eq for pthread_rwlock_t {}
 
         impl ::fmt::Debug for pthread_rwlock_t {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("pthread_rwlock_t")
                 // FIXME: .field("size", &self.size)
                     .finish()
@@ -1420,7 +1420,7 @@ cfg_if! {
         impl Eq for pthread_barrier_t {}
 
         impl ::fmt::Debug for pthread_barrier_t {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("pthread_barrier_t")
                     .field("size", &self.size)
                     .finish()
@@ -1454,7 +1454,7 @@ cfg_if! {
         impl Eq for sockaddr_alg {}
 
         impl ::fmt::Debug for sockaddr_alg {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("sockaddr_alg")
                     .field("salg_family", &self.salg_family)
                     .field("salg_type", &self.salg_type)
@@ -1485,7 +1485,7 @@ cfg_if! {
         impl Eq for uinput_setup {}
 
         impl ::fmt::Debug for uinput_setup {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("uinput_setup")
                     .field("id", &self.id)
                     .field("name", &&self.name[..])
@@ -1516,7 +1516,7 @@ cfg_if! {
         impl Eq for uinput_user_dev {}
 
         impl ::fmt::Debug for uinput_user_dev {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("uinput_setup")
                     .field("name", &&self.name[..])
                     .field("id", &self.id)
@@ -1551,7 +1551,7 @@ cfg_if! {
         }
         impl Eq for mq_attr {}
         impl ::fmt::Debug for mq_attr {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("mq_attr")
                     .field("mq_flags", &self.mq_flags)
                     .field("mq_maxmsg", &self.mq_maxmsg)
@@ -1569,7 +1569,7 @@ cfg_if! {
             }
         }
         impl ::fmt::Debug for __c_anonymous_ifr_ifru {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("ifr_ifru")
                     .field("ifru_addr", unsafe { &self.ifru_addr })
                     .field("ifru_dstaddr", unsafe { &self.ifru_dstaddr })
@@ -1588,7 +1588,7 @@ cfg_if! {
             }
         }
         impl ::fmt::Debug for ifreq {
-            fn fmt(&self, f: &mut ::fmt::Formatter) -> ::fmt::Result {
+            fn fmt(&self, f: &mut ::fmt::Formatter<'_>) -> ::fmt::Result {
                 f.debug_struct("ifreq")
                     .field("ifr_name", &self.ifr_name)
                     .field("ifr_ifru", &self.ifr_ifru)
