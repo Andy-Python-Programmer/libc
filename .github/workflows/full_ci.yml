@@ -63,6 +63,10 @@ jobs:
               ARCH_BITS: 64
               ARCH: x86_64
           - target: x86_64-pc-windows-msvc
+<<<<<<< HEAD
+=======
+          # FIXME: It currently causes segfaults.
+>>>>>>> 3d0e971d (Disable `i686-pc-windows-gnu` CI)
           #- target: i686-pc-windows-gnu
           #  env:
           #    ARCH_BITS: 32
