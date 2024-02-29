@@ -3372,6 +3372,7 @@ memalign
 memchr
 memcmp
 memcpy
+memfd_create
 memmem
 memmove
 memrchr
@@ -3387,6 +3388,7 @@ mknodat
 mkstemp
 mktime
 mlock
+mlock2
 mlockall
 mmap
 mmap64
@@ -3576,6 +3578,7 @@ remove
 removexattr
 rename
 renameat
+renameat2
 res_init
 rewind
 rewinddir
@@ -3700,6 +3703,8 @@ statfs
 statfs64
 statvfs
 statvfs64
+statx
+statx_timestamp
 strcasecmp
 strcasestr
 strcat
